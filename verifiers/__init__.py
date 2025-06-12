@@ -24,7 +24,10 @@ from .envs.env_group import EnvGroup
 
 from .trainers import GRPOTrainer, GRPOConfig, grpo_defaults, lora_defaults
 
-__version__ = "0.1.0"
+try:
+    from ._version import version as __version__
+except ImportError:
+    __version__ = "0.0.0+unknown"
 
 # Setup default logging configuration
 setup_logging()
